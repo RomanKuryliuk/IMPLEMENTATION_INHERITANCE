@@ -27,7 +27,6 @@ public:
 	Dish& set_price(int);
 	Dish& set_time(int);
 	Dish& set_category(Category&);
-	Dish& set_cook(Cook&);
 
 	void show();
 };

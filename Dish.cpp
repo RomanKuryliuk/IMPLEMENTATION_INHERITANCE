@@ -15,7 +15,7 @@ Dish::Dish()
 
 	category = NONE;
 
-
+	cout << "Конструктор Dish за замовчування " << this << endl;
 }
 
 Dish::Dish(char* _name_dish, int _price, int _time, Category& _category) :
@@ -28,6 +28,8 @@ Dish::Dish(char* _name_dish, int _price, int _time, Category& _category) :
 	time = _time;
 
 	category = _category;
+
+	cout << "Конструктор Dish з параметрами " << this << endl;
 }
 
 Dish::Dish(char* _name_dish, int _price, int _time, Category& _category, Cook& _cook) :
@@ -40,6 +42,8 @@ Dish::Dish(char* _name_dish, int _price, int _time, Category& _category, Cook& _
 	time = _time;
 
 	category = _category;
+
+	cout << "Конструктор Dish з параметрами " << this << endl;
 }
 
 Dish::Dish(char* _name_dish, int _price, int _time, Category& _category, char* _name, char* _surname) :
@@ -52,6 +56,8 @@ Dish::Dish(char* _name_dish, int _price, int _time, Category& _category, char* _
 	time = _time;
 
 	category = _category;
+
+	cout << "Конструктор Dish з параметрами " << this << endl;
 }
 
 Dish::Dish(Dish& _dish):
@@ -65,11 +71,12 @@ Dish::Dish(Dish& _dish):
 
 	category = _dish.category;
 
+	cout << "Конструктор Dish копіювання " << this << endl;
 }
 
 Dish::~Dish()
 {
-
+	cout << "Деструктор Dish " << this << endl;
 }
 
 char* Dish::get_name()
@@ -118,12 +125,6 @@ Dish& Dish::set_category(Category& category)
 	return *this;
 }
 
-Dish& Dish::set_cook(Cook& cook)
-{
-	cook = cook;
-	return *this;
-}
-
 void Dish::show()
 {
 	cout << name_dish << ", " << price << " грн, " << time << "хв, ";
@@ -150,4 +151,6 @@ void Dish::show()
 	default:
 		break;
 	}
+
+	Cook::show();
 }
