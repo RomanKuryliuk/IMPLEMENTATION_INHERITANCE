@@ -32,7 +32,6 @@ Order::Order(char* name, Date date, int number, Dish* dishes)
 		this->dishes[i].set_price(dishes[i].get_price());
 		this->dishes[i].set_time(dishes[i].get_time());
 		this->dishes[i].set_category(dishes[i].get_category());
-		this->dishes[i].set_cook(dishes[i].get_cook());
 	}
 }
 

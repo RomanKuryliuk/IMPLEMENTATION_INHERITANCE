@@ -11,6 +11,8 @@ Cook::Cook()
 	strcpy_s(name, sizeof "noname", "noname");
 	surname = new char[10];
 	strcpy_s(surname, sizeof "nosurname", "nosurname");
+
+	cout << "Конструктор Cook за замовчування " << this << endl;
 }
 
 Cook::Cook(char* _name, char* _surname)
@@ -19,6 +21,8 @@ Cook::Cook(char* _name, char* _surname)
 	strcpy_s(name, strlen(_name) + 1, _name);
 	surname = new char[strlen(_surname) + 1];
 	strcpy_s(surname, strlen(_surname) + 1, _surname);
+
+	cout << "Конструктор Cook з параметрами " << this << endl;
 }
 
 Cook::Cook(Cook& _cook)
@@ -27,10 +31,13 @@ Cook::Cook(Cook& _cook)
 	strcpy_s(name, strlen(_cook.name) + 1, _cook.name);
 	surname = new char[strlen(_cook.surname) + 1];
 	strcpy_s(surname, strlen(_cook.surname) + 1, _cook.surname);
+
+	cout << "Конструктор Cook копіювання " << this << endl;
 }
 
 Cook::~Cook()
 {
+	cout << "Деструктор Cook " << this << endl;
 }
 
 char* Cook::get_name()
